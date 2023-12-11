@@ -1,15 +1,12 @@
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize({
-  dialect: 'mysql',
-  username: 'root',
-  password: '',
-  database: 'helpdesk',
-  host: 'localhost',
+  dialect: 'postgres',
+  host: process.env.Internal_URL,
+  port: parseInt(process.env.Port || '5432'),
+  username: process.env.Username,
+  password: process.env.Password,
+  database: process.env.Database,
 });
 
 export { sequelize };
-
-sequelize.sync().then(() => {
-  console.log('Database synced successfully');
-});

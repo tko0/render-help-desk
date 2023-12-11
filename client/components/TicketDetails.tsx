@@ -30,7 +30,7 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({ ticket, onClose, onStatus
       const ticketId = ticket?.id;
       if (ticketId !== undefined) {
         if (["New", "In Progress", "Resolved", "Spam"].includes(newStatus)) {
-          await axios.put(`${process.env.NEXT_PUBLIC_REACT_APP_API_URL}/tickets/update-status`, {
+          await axios.put(`${process.env.Internal_Database_URL}/tickets/update-status`, {
             ticketId: ticketId,
             newStatus: newStatus,
           });

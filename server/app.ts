@@ -8,15 +8,19 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5432;
 
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 app.use('/tickets', ticketRouter);
 
-sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+sequelize.sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Error syncing with the database:', error);
   });
-});
