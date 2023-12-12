@@ -19,7 +19,7 @@ const AdminPanel: React.FC = () => {
 
 
   useEffect(() => {
-    axios.get<Ticket[]>('/tickets')
+    axios.get<Ticket[]>('/http://localhost:10000/tickets')
     .then(response => {
         setTickets(response.data);
       })

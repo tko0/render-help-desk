@@ -30,7 +30,7 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({ ticket, onClose, onStatus
       const ticketId = ticket?.id;
       if (ticketId !== undefined) {
         if (["New", "In Progress", "Resolved", "Spam"].includes(newStatus)) {
-          await axios.put(`/tickets/update-status`, {
+          await axios.put(`http://localhost:10000/tickets/update-status`, {
             ticketId: ticketId,
             newStatus: newStatus,
           });
