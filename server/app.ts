@@ -21,7 +21,7 @@ sequelize.authenticate()
       console.log(`Server is running on http://localhost:${PORT}`);
     });
   })
-  .catch((error: any) => {
+  .catch((error) => {
     console.error('Error connecting to the database:', error);
     process.exit(1);
   });
