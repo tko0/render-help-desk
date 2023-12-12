@@ -8,7 +8,7 @@ const HelpDeskForm: React.FC = () => {
   const [problemDescription, setProblemDescription] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  axios.defaults.baseURL = 'http://localhost:3000';
+  axios.defaults.baseURL = 'http://localhost:10000';
 
   const handleSubmit = async () => {
     try {
