@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const HelpDeskForm: React.FC = () => {
   const [name, setName] = useState('');
@@ -6,6 +7,8 @@ const HelpDeskForm: React.FC = () => {
   const [subject, setSubject] = useState('');
   const [problemDescription, setProblemDescription] = useState('');
   const [submitting, setSubmitting] = useState(false);
+
+  axios.defaults.baseURL = 'http://localhost:10000';
 
   const handleSubmit = async () => {
     try {

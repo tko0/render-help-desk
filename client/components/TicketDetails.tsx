@@ -12,6 +12,8 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({ ticket, onClose, onStatus
   const [replyText, setReplyText] = useState<string>('');
   const [newStatus, setNewStatus] = useState<string>(ticket?.status || '');
 
+  axios.defaults.baseURL = 'http://localhost:10000';
+
   useEffect(() => {
     setNewStatus(ticket?.status || '');
   }, [ticket]);
@@ -30,10 +32,7 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({ ticket, onClose, onStatus
       const ticketId = ticket?.id;
       if (ticketId !== undefined) {
         if (["New", "In Progress", "Resolved", "Spam"].includes(newStatus)) {
-          await axios.put(`/tickets/update-status`, {
-            ticketId: ticketId,
-            newStatus: newStatus,
-          });
+          await axios.put(`/tickets/update-status`, { ticketId, newStatus });
 
           onStatusChange({ ...ticket, status: newStatus } as Ticket);
 
