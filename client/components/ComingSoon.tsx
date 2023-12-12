@@ -10,7 +10,7 @@ const ComingSoon = () => {
         <p className="text-gray-300 mt-4">We are working on something amazing. Stay tuned!</p>
         <div className="mt-8">
           <Image
-            src={LogoImage}
+            src='/bioverse_newyork_logo.jpeg'
             alt="Logo"
             width={200}
             height={200}

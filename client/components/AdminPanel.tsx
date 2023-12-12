@@ -18,7 +18,7 @@ const AdminPanel: React.FC = () => {
 
 
 
-  axios.defaults.baseURL = 'http://localhost:10000';
+  axios.defaults.baseURL = 'http://localhost:3000';
 
   useEffect(() => {
     axios.get<Ticket[]>(`/tickets`)

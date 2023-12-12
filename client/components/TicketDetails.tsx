@@ -12,7 +12,7 @@ const TicketDetails: React.FC<TicketDetailsProps> = ({ ticket, onClose, onStatus
   const [replyText, setReplyText] = useState<string>('');
   const [newStatus, setNewStatus] = useState<string>(ticket?.status || '');
 
-  axios.defaults.baseURL = 'http://localhost:10000';
+  axios.defaults.baseURL = 'http://localhost:3000';
 
   useEffect(() => {
     setNewStatus(ticket?.status || '');

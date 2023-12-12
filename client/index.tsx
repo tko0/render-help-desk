@@ -50,18 +50,18 @@ const Home: React.FC = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ marginRight: '20px', cursor: 'pointer' }} onClick={() => handleNavigate('home')}>
-              <Image src={LogoImage} alt="Bioverse Logo" width={32} height={32} />
+              <Image src='/bioverse_newyork_logo.jpeg' alt="Bioverse Logo" width={32} height={32} />
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div style={{ marginRight: '10px', cursor: 'pointer' }} onClick={() => handleNavigate('coming-soon')}>
-              <Image src={ShoppingIcon} alt="Shopping" width={16} height={16} />
+              <Image src='/cart-73-16.ico' alt="Shopping" width={16} height={16} />
             </div>
             <div style={{ marginRight: '10px', cursor: 'pointer' }} onClick={() => handleNavigate('admin-panel')}>
-              <Image src={UserIcon} alt="User" width={16} height={16} />
+              <Image src='/user-16.ico' alt="User" width={16} height={16} />
             </div>
             <div style={{ marginRight: '10px', cursor: 'pointer' }} onClick={() => handleNavigate('help-desk-form')}>
-              <Image src={MenuIcon} alt="Menu" width={16} height={16} />
+              <Image src='/menu-4-16.ico' alt="Menu" width={16} height={16} />
             </div>
           </div>
         </div>
