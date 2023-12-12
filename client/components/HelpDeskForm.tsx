@@ -31,8 +31,8 @@ const HelpDeskForm: React.FC = () => {
           'Content-Type': 'application/json',
         },
       });
-
-      if (response.status === 200) {
+      console.log(response.status);
+      if (response.status === 201) {
         console.log('Ticket submitted successfully');
       } else {
         console.error('Failed to submit ticket');
