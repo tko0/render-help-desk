@@ -37,8 +37,14 @@ const HelpDeskForm: React.FC = () => {
       } else {
         console.error('Failed to submit ticket');
       }
-    } catch (error) {
-      console.error('Error submitting ticket:', error);
+    } catch (error:any) {
+      if (error.response) {
+        console.error('Error submitting ticket:', error.response.status, error.response.data);
+      } else if (error.request) {
+        console.error('Error submitting ticket: No response received');
+      } else {
+        console.error('Error submitting ticket:', error.message);
+      }
     } finally {
       setSubmitting(false);
     }
