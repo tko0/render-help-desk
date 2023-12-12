@@ -18,7 +18,7 @@ const AdminPanel: React.FC = () => {
 
 
 
-  axios.defaults.baseURL = 'http://localhost:10000';
+  axios.defaults.baseURL = 'https://render-help-desk-app.onrender.com';
 
   useEffect(() => {
     axios.get<Ticket[]>(`/tickets`)

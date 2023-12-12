@@ -6,6 +6,7 @@ dist/
 build/
 *.log
 .next/static/webpack/
+.next/cache
 # Environment variables
 .env
 
