@@ -16,8 +16,7 @@ const HelpDeskForm: React.FC = () => {
         return;
       }
       console.log('Submitting Ticket:', { name, email, subject, problemDescription });
-      const apiUrl = 'http://localhost:10000';
-      const response = await fetch(`${apiUrl}/tickets/submit`, {
+      const response = await fetch(`/tickets/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
