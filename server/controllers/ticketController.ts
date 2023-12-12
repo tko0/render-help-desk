@@ -27,10 +27,12 @@ export const submitTicket = async (req: Request, res: Response) => {
 
 export const getTickets = async (_req: Request, res: Response) => {
   try {
+    console.log('Fetching tickets from the database...');
     const tickets = await TicketModel.findAll({
       attributes: ['id', 'name', 'subject', 'email', 'problemDescription', 'status', 'createdAt', 'updatedAt'],
     });
 
+    console.log('Fetched tickets:', tickets);
     res.json(tickets);
   } catch (error) {
     console.error('Error fetching tickets:', error);

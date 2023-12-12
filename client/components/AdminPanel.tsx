@@ -19,9 +19,8 @@ const AdminPanel: React.FC = () => {
 
 
   useEffect(() => {
-    const apiUrl = 'https://render-help-desk-app.onrender.com';
+    const apiUrl = 'http://localhost:10000';
     axios.get<Ticket[]>(`${apiUrl}/tickets`)
-
       .then(response => setTickets(response.data))
       .catch(error => console.error('Error fetching tickets:', error));
   }, []);
