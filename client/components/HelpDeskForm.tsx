@@ -18,16 +18,21 @@ const HelpDeskForm: React.FC = () => {
         console.error('Please fill in all required fields');
         return;
       }
+
       console.log('Submitting Ticket:', { name, email, subject, problemDescription });
-      const response = await fetch(`/tickets/submit`, {
-        method: 'POST',
+
+      const response = await axios.post('/tickets/submit', {
+        name,
+        email,
+        subject,
+        problemDescription,
+      }, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, subject, problemDescription }),
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         console.log('Ticket submitted successfully');
       } else {
         console.error('Failed to submit ticket');
