@@ -16,10 +16,10 @@ const AdminPanel: React.FC = () => {
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
   const [isDateFilterActive, setIsDateFilterActive] = useState(false);
 
-  const apiUrl = process.env.Internal_Database_URL;
+
 
   useEffect(() => {
-    axios.get<Ticket[]>(`${apiUrl}/tickets`)
+    axios.get<Ticket[]>('/tickets')
     .then(response => {
         setTickets(response.data);
       })
